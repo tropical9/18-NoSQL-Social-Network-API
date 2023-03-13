@@ -1,16 +1,39 @@
-// Import required packages
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-// Create Express app
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
 
-// Configure body-parser middleware to handle JSON data
 app.use(bodyParser.json());
 
-// Connect to MongoDB using Mongoose
 mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
+
+app.use('/api/users', userRoutes);
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+
+
+
+
+
+
+// // Import required packages
+// const express = require('express');
+// const mongoose = require('mongoose');
+// const bodyParser = require('body-parser');
+
+// // Create Express app
+// const app = express();
+
+// // Configure body-parser middleware to handle JSON data
+// app.use(bodyParser.json());
+
+// // Connect to MongoDB using Mongoose
+// mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Define Mongoose schemas for User, Thought, Reaction, and Friend models
 const userSchema = new mongoose.Schema({
