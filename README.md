@@ -1,7 +1,10 @@
+```
 User Story
 AS A social media startup
 I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
+```
+```
 Acceptance Criteria
 GIVEN a social network API
 WHEN I enter the command to invoke the application
@@ -11,13 +14,25 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia
 THEN I am able to successfully create, update, and delete users and thoughts in my database
 WHEN I test API POST and DELETE routes in Insomnia
-THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list 
+```
+
+GET
+localhost/api/users
+thoughts
+
+GET routes to return a single user and a single thought
 
 
-Getting Started
-Use the following guidelines to set up your models and API routes:
+POST, PUT, and DELETE routes for users
 
-Models
+POST, PUT, and DELETE routes for thoughts 
+
+POST and DELETE routes for a user’s friend list
+
+ POST and DELETE routes for reactions 
+
+ Models
 User
 
 username
@@ -138,4 +153,3 @@ DELETE to remove a thought by its _id
 POST to create a reaction stored in a single thought's reactions array field
 
 DELETE to pull and remove a reaction by the reaction's reactionId value
-
