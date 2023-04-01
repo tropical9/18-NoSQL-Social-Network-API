@@ -1,7 +1,7 @@
 const { Thought, Reaction } = require('../models');
 
 const reactionController = {
-  // add reaction to thought
+  // add reaction
   addReaction({ params, body }, res) {
     Reaction.create(body)
       .then(({ _id }) => {
@@ -20,8 +20,7 @@ const reactionController = {
       })
       .catch(err => res.json(err));
   },
-
-  // remove reaction
+  // remove reaction 
   removeReaction({ params }, res) {
     Reaction.findOneAndDelete({ _id: params.reactionId })
       .then(deletedReaction => {
@@ -44,5 +43,4 @@ const reactionController = {
       .catch(err => res.json(err));
   }
 };
-
 module.exports = reactionController;
