@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+// to validiate email
 const { isEmail } = require('validator');
 const bcrypt = require('bcrypt');
 
@@ -38,6 +39,7 @@ const userSchema = new Schema(
   }
 );
 
+// friend 
 userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
@@ -47,7 +49,7 @@ userSchema.pre('save', async function(next) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
-  
+
   next();
 });
 
@@ -58,3 +60,4 @@ userSchema.methods.isCorrectPassword = async function(password) {
 const User = model('User', userSchema);
 
 module.exports = User;
+
