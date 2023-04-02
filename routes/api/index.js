@@ -8,3 +8,5 @@ router.use('/thoughts', thoughtRoutes);
 router.use('/reactions', reactionRoutes);
 
 module.exports = router;
+
+
