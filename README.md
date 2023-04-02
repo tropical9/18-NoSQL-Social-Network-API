@@ -26,6 +26,10 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 This application will use Express.js for routing, a MondoDB database, and the Mongo ODM.  
 
 ## Usage
+https://user-images.githubusercontent.com/113566952/229333460-e2c74cb9-930f-40f7-bf6c-fa1689e61b05.mp4
+
+[Link to Walkthrough](https://drive.google.com/file/d/1z9BCfMENUMbvZ9j_bMtB-UItUHVxCJWw/view)
+
 
 ## Credits
 
